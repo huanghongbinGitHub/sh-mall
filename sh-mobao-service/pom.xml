@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sh-project-mall-parent</artifactId>
+        <groupId>com.sh</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <artifactId>sh-mobao-service</artifactId>
+    <packaging>pom</packaging>
+    
+    <modules>
+        <module>sh-mobao-oms</module>
+        <module>sh-mobao-ums</module>
+        <module>sh-mobao-pay</module>
+        <module>sh-mobao-cart</module>
+        <module>sh-mobao-dictionary</module>
+        <module>sh-mobao-sms</module>
+        <module>sh-mobao-cms</module>
+        <module>sh-mobao-pms</module>
+    </modules>
+
+</project>

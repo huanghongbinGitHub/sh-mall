@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sh-mobao-application</artifactId>
+        <groupId>com.sh</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>sh-mobao-portal-web</artifactId>
+
+    <dependencies>
+
+<!--        引入ums-api-->
+        <dependency>
+            <groupId>com.sh</groupId>
+            <artifactId>sh-mobao-ums-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sh</groupId>
+            <artifactId>sh-mobao-ums</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sh</groupId>
+            <artifactId>sh-mobao-common-base</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.tess4j/tess4j -->
+        <dependency>
+            <groupId>net.sourceforge.tess4j</groupId>
+            <artifactId>tess4j</artifactId>
+            <version>4.5.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.octo.captcha/jcaptcha -->
+        <dependency>
+            <groupId>com.octo.captcha</groupId>
+            <artifactId>jcaptcha</artifactId>
+            <version>1.0</version>
+            <exclusions>
+            <exclusion>
+            <groupId>com.jhlabs</groupId>
+            <artifactId>imaging</artifactId>
+            </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ramostear</groupId>
+            <artifactId>Happy-Captcha</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.whvcse</groupId>
+            <artifactId>easy-captcha</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+<!--        kcaptcha-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>kaptcha-spring-boot-starter</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <!--        <dependency>-->
+<!--            <groupId></groupId>-->
+<!--            <artifactId>kaptcha</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/com.jhlabs/imaging -->
+
+<!--        <dependency>-->
+<!--            <groupId>com.jhlabs</groupId>-->
+<!--            <artifactId>imaging</artifactId>-->
+<!--            <version>01012005</version>-->
+<!--        </dependency>-->
+
+<!--        <repository>-->
+<!--            <id>central-repos3</id>-->
+<!--            <name>Central Repository3</name>-->
+<!--            <url>http://maven.jahia.org/maven2/</url>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+
+
+
+    </dependencies>
+
+
+</project>

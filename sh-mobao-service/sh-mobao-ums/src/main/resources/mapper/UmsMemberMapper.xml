@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sh.mobaoums.mapper.UmsMemberMapper">
+    <select id="selectByName" parameterType="string" resultType="com.sh.mobao.ums.entity.UmsMember">
+    select * from ums_member where username = #{name}
+    </select>
+
+    <!--    获取用户的总记录数-->
+    <select id="findTotal" resultType="int">
+        select count(id) from ums_member;
+    </select>
+
+    <update id="updateUser" parameterType="com.sh.mobao.ums.entity.UmsMember">
+        update ums_member set icon = #{icon}, email = #{email} where username = #{username}
+    </update>
+
+
+</mapper>
