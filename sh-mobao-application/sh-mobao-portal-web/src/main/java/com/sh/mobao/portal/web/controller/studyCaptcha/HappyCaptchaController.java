@@ -1,22 +1,16 @@
-package com.sh.mobao.portal.web.controller;
+package com.sh.mobao.portal.web.controller.studyCaptcha;
 
 
 import com.ramostear.captcha.HappyCaptcha;
 import com.ramostear.captcha.support.CaptchaStyle;
 import com.ramostear.captcha.support.CaptchaType;
 import com.sh.mobao.base.annotations.TokenCheck;
-import com.sh.mobao.portal.web.util.JCaptchaUtil;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 
 @RestController
 @RequestMapping("/happy-captcha")

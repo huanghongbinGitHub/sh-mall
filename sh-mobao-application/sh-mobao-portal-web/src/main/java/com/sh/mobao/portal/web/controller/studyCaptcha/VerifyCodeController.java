@@ -1,20 +1,15 @@
-package com.sh.mobao.portal.web.controller;
+package com.sh.mobao.portal.web.controller.studyCaptcha;
 
 import com.sh.mobao.base.annotations.TokenCheck;
 import com.sh.mobao.portal.web.code.ImageCode;
-import com.sh.mobao.portal.web.util.JCaptchaUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.imageio.ImageIO;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.Base64;
 
 

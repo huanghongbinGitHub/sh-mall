@@ -1,11 +1,8 @@
-package com.sh.mobao.portal.web.controller;
+package com.sh.mobao.portal.web.controller.studyCaptcha;
 
 
 import com.ramostear.captcha.HappyCaptcha;
-import com.ramostear.captcha.support.CaptchaStyle;
-import com.ramostear.captcha.support.CaptchaType;
 import com.sh.mobao.base.annotations.TokenCheck;
-import com.wf.captcha.ArithmeticCaptcha;
 import com.wf.captcha.ChineseCaptcha;
 import com.wf.captcha.SpecCaptcha;
 import com.wf.captcha.utils.CaptchaUtil;
