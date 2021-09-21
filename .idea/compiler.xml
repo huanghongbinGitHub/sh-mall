@@ -48,7 +48,7 @@
       <module name="sh-mobao-pay-api" options="-parameters" />
       <module name="sh-mobao-pms" options="-parameters" />
       <module name="sh-mobao-pms-api" options="-parameters" />
-      <module name="sh-mobao-portal-web" options="-parameters" />
+      <module name="sh-mobao-portal-web" options="-parameters -bootclasspath $USER_HOME$/Library/Java/JavaVirtualMachines/corretto-1.8.0_292/Contents/Home/jre/lib/rt.jar" />
       <module name="sh-mobao-sms" options="-parameters" />
       <module name="sh-mobao-sms-api" options="-parameters" />
       <module name="sh-mobao-ums" options="-parameters" />

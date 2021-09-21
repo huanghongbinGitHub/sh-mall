@@ -16,15 +16,30 @@ import javax.validation.Valid;
 @RequestMapping("/user-member")
 public class UserMemberController {
 
+    @Autowired
+    UmsMemberService  umsMemberService;
+
     @RequestMapping("/hello")
     @ResponseBody
     public String hello(){
         return "hello";
     }
 
-    @Autowired
-    UmsMemberService  umsMemberService;
+    /**
+     * 获取验证码
+     * @return
+     */
+    @RequestMapping("/get-captcha")
+    public String getCaptcha(){
 
+        return "获取验证码";
+    }
+
+    /**
+     * 注册，需要传入验证码信息
+     * @param umsMemberRegisterParamDTO
+     * @return
+     */
     @PostMapping("/register")
     public ResultWrapper register(@RequestBody @Valid UmsMemberRegisterParamDTO umsMemberRegisterParamDTO){
 

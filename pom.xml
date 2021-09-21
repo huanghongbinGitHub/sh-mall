@@ -17,6 +17,32 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+
+<!--    父类的pom文件主要功能：-->
+<!--    1.定义properties：对整体项目做约定,定义版本，如spring-boot-version，-->
+<!--    2.定义dependencyManagement：不会引入，只是做个约定，-->
+<!--    dependencyManagement中约定使用的版本号，一般都是使用properties中定义的版本号-->
+<!--    在子模块中使用了在父类dependencyManagement中约定的包，那么使用的都是父类约定好的包-->
+
+<!--    工具类的jar包，小工具都放到父类的pom文件中-->
+
+    <properties>
+<!--        对整体项目做约定-->
+<!--        <spring-boot-version>5.2.0</spring-boot-version>-->
+<!--        定义整个项目都是utf-8-->
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.20</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <modules>
         <module>sh-mobao-api</module>
         <module>sh-mobao-service</module>
