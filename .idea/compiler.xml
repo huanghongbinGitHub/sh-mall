@@ -8,30 +8,34 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="sh-mobao-sms-api" />
+        <module name="sh-mobao-dictionary-api" />
         <module name="sh-mobao-ums-api" />
         <module name="sh-mobao-ums" />
         <module name="sh-mobao-dictionary" />
         <module name="sh-mobao-common-base" />
-        <module name="sh-mobao-oms" />
-        <module name="sh-mobao-pms" />
+        <module name="sh-mobao-cart" />
+        <module name="ca-web2" />
         <module name="sh-mobao-cms-api" />
         <module name="sh-mobao-portal-web" />
         <module name="sh-momao-generator" />
-        <module name="sh-mobao-oms-api" />
+        <module name="sh-mobao-cms" />
         <module name="sh-mobao-pay-api" />
+        <module name="ca-web" />
         <module name="sh-mobao-sms" />
-        <module name="sh-mobao-cart" />
+        <module name="sh-mobao-oms-api" />
         <module name="sh-mobao-pms-api" />
         <module name="sh-mobao-cart-api" />
         <module name="sh-mobao-pay" />
         <module name="sh-mobao-common-util" />
-        <module name="sh-mobao-cms" />
-        <module name="sh-mobao-dictionary-api" />
+        <module name="sh-mobao-oms" />
+        <module name="sh-mobao-pms" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ca-web" options="-parameters" />
+      <module name="ca-web2" options="-parameters" />
       <module name="dictionary" options="-parameters" />
       <module name="sh-mobao-application" options="-parameters" />
       <module name="sh-mobao-cart" options="-parameters" />

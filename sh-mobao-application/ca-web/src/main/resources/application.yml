@@ -1,0 +1,16 @@
+#http端口
+http-port: 82
+
+#https的端口
+server:
+  port: 81
+
+  ssl:
+    key-store: classpath:mobao-alias.keystore
+    key-store-type: JKS
+    key-alias: mobao-alias
+    key-store-password: 123456
+    key-password: 123456
+
+
+
