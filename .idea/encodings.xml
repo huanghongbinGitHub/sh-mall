@@ -9,8 +9,6 @@
     <file url="file://$PROJECT_DIR$/sh-mobao-api/sh-mobao-pms-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sh-mobao-api/sh-mobao-sms-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sh-mobao-api/sh-mobao-ums-api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sh-mobao-application/ca-web/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sh-mobao-application/ca-web2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sh-mobao-application/sh-mobao-portal-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sh-mobao-application/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sh-mobao-application/src/main/resources" charset="UTF-8" />
@@ -25,5 +23,7 @@
     <file url="file://$PROJECT_DIR$/sh-mobao-service/sh-mobao-sms/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sh-mobao-service/sh-mobao-ums/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sh-momao-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/扩展/ca-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/扩展/ca-web2/src/main/java" charset="UTF-8" />
   </component>
 </project>
