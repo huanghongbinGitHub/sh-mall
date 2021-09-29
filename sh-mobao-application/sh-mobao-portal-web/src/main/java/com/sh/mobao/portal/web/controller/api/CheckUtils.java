@@ -2,6 +2,7 @@ package com.sh.mobao.portal.web.controller.api;
 
 
 import com.sh.mobao.common.util.MD5Util;
+import com.sh.mobao.common.util.Sha256Utils;
 
 import java.util.*;
 
@@ -12,6 +13,8 @@ public class CheckUtils<appSecret> {
 
     //根据Map生成签名
     public static String generatorSign(Map<String,Object> map){
+        map.remove("sign");
+
         //排序，因为前段传过来的顺序可能是无序的
         Map<String,Object> sortMap = sortMapByKey(map);
 
@@ -27,6 +30,9 @@ public class CheckUtils<appSecret> {
         //生成签名
 
         return MD5Util.md5(stringBuilder.toString());
+
+        //生成Sha256的签名
+//        return Sha256Utils.getSHA256(stringBuilder.toString());
     }
 
     public static Map<String,Object> sortMapByKey(Map<String,Object> map){
@@ -62,8 +68,6 @@ public class CheckUtils<appSecret> {
         String sign = generatorSign(map);
 //        a3337ee5d708e41ac38bd0d88561b95f
         System.out.println(sign);
-
-
     }
 
 
