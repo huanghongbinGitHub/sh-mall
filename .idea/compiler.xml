@@ -17,8 +17,8 @@
         <module name="sh-mobao-cms-api" />
         <module name="sh-mobao-portal-web" />
         <module name="sh-momao-generator" />
-        <module name="sh-mobao-pay-api" />
         <module name="sh-mobao-cms" />
+        <module name="sh-mobao-pay-api" />
         <module name="sh-mobao-sms" />
         <module name="sh-mobao-oms-api" />
         <module name="sh-mobao-pms-api" />

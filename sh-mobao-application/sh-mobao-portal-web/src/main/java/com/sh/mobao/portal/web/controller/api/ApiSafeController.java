@@ -4,6 +4,11 @@ import cn.hutool.core.convert.Convert;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.sh.mobao.portal.web.controller.api.posttest.SignDTO;
+import com.sh.mobao.portal.web.custom.MyGoogleKaptcha;
+import com.sh.mobao.portal.web.filter.SignAuthFilter;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +23,7 @@ import java.util.Map;
 @RequestMapping("/api-safe")
 public class ApiSafeController {
 
+
     @RequestMapping("/hello")
     public String hello(){
         return "hello api safe";
@@ -28,7 +34,7 @@ public class ApiSafeController {
     public String getTest(String appId, String name, String sign, long timeStamp, HttpServletRequest request){
 
         //为了排序，参数写死
-        HashMap<String , Object> map = new HashMap<>();
+        HashMap<String , String> map = new HashMap<>();
 //        map.put("appId",appId);
 //        map.put("name",name);
 //        map.put("timestamp",timeStamp);
@@ -59,23 +65,26 @@ public class ApiSafeController {
 
     @PostMapping("/post-test")
     public String postTest(@RequestBody SignDTO signDTO){
-        JSONObject jsonObject = JSONUtil.parseObj(signDTO);
-        //参数赚map
-        Map<String, Object> stringObjectMap = Convert.toMap(String.class, Object.class, signDTO);
+        System.out.println("进入controller方法");
 
-        //排序
-        Map<String, Object> stringObjectMap1 = CheckUtils.sortMapByKey(stringObjectMap);
-
-        System.out.println(stringObjectMap1);
-        //map生成签名
-        String sign = CheckUtils.generatorSign(stringObjectMap1);
-
-        //判断签名
-        if (signDTO.getSign().equals(sign)){
-            return "校验通过";
-        }else {
-            return "校验不通过";
-        }
+//        JSONObject jsonObject = JSONUtil.parseObj(signDTO);
+//        //参数赚map
+//        Map<String, Object> stringObjectMap = Convert.toMap(String.class, Object.class, signDTO);
+//
+//        //排序
+//        Map<String, Object> stringObjectMap1 = CheckUtils.sortMapByKey(stringObjectMap);
+//
+//        System.out.println(stringObjectMap1);
+//        //map生成签名
+//        String sign = CheckUtils.generatorSign(stringObjectMap1);
+//
+//        //判断签名
+//        if (signDTO.getSign().equals(sign)){n 
+//            return "校验通过";
+//        }else {
+//            return "校验不通过";
+//        }
+        return "success";
     }
 
 }

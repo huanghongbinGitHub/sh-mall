@@ -19,10 +19,10 @@ import javax.security.auth.login.LoginException;
 //@RestController
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(Exception.class)
-    public ResultWrapper customException(){
-        return ResultWrapper.builder().code(301).msg("统一异常").build();
-    }
+//    @ExceptionHandler(Exception.class)
+//    public ResultWrapper customException(){
+//        return ResultWrapper.builder().code(301).msg("统一异常").build();
+//    }
 
     /**
      * token异常处理

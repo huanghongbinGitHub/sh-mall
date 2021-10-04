@@ -2,52 +2,63 @@ package com.sh.mobao.portal.web.controller.api;
 
 
 import com.sh.mobao.common.util.MD5Util;
-import com.sh.mobao.common.util.Sha256Utils;
 
 import java.util.*;
 
-public class CheckUtils<appSecret> {
+public class CheckUtils {
 
-    //appSecret 和 appId 一一对应
+    /**
+     * app secret和 appId，一一对应
+     */
     public static String appSecret = "aaa";
 
-    //根据Map生成签名
-    public static String generatorSign(Map<String,Object> map){
+    // 校验 签名
+    public static boolean checkSign(Map<String,String> map){
+        String sign = (String) map.get("sign");
         map.remove("sign");
-
-        //排序，因为前段传过来的顺序可能是无序的
-        Map<String,Object> sortMap = sortMapByKey(map);
-
-        //转格式 name=张三&age=10,转成新的格式
-        Set<Map.Entry<String,Object>> entrySet = sortMap.entrySet();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (Map.Entry<String,Object> entry:entrySet){
-            stringBuilder.append(entry.getKey()+","+entry.getValue()).append("#");
+        // 生成sign
+        String s = CheckUtils.generatorSign(map);
+        if (s.equals(sign)){
+            return true;
+        }else {
+            return false;
         }
-//        stringBuilder.subSequence(0,stringBuilder.length() - 1);
-        //组装secret，在参数的后面添加secret
-        stringBuilder.append("secret").append(appSecret);
-        //生成签名
 
-        return MD5Util.md5(stringBuilder.toString());
-
-        //生成Sha256的签名
-//        return Sha256Utils.getSHA256(stringBuilder.toString());
     }
 
-    public static Map<String,Object> sortMapByKey(Map<String,Object> map){
-        if (map == null){
-            //判断是否为空
-//            new Exception("参数为空");
-            return null;
+    // 根据map生成签名
+    public static String generatorSign(Map<String,String> map){
+        map.remove("sign");
+        // 排序:
+        Map<String, String> stringObjectMap = sortMapByKey(map);
+        // 转格式:   name=张三&age=10,:  name,张三,age,10
+        Set<Map.Entry<String, String>> entries = stringObjectMap.entrySet();
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry<String,String> e : entries){
+            sb.append(e.getKey()+","+e.getValue()).append("#");
         }
-        Map<String,Object> sortMap = new TreeMap<>(new MyMapComparator());
+
+
+        // 组装secret  在参数的后面 添加 secret
+        sb.append("secret").append(appSecret);
+        // 生成签名
+        return MD5Util.md5(sb.toString());
+        // sha256生成 签名
+//		return Sha256Utils.getSHA256(sb.toString());
+    }
+
+    public static Map<String,String> sortMapByKey(Map<String,String> map){
+        // 判断一下map是否为空，自己写
+
+        Map<String,String> sortMap = new TreeMap<>(new MyMapComparator());
+
         sortMap.putAll(map);
-        return sortMap;
+
+        return  sortMap;
+
     }
 
-    public static class MyMapComparator implements Comparator<String>{
-
+    static class MyMapComparator implements Comparator<String>{
         @Override
         public int compare(String o1, String o2) {
             return o1.compareTo(o2);
@@ -55,20 +66,19 @@ public class CheckUtils<appSecret> {
     }
 
     public static void main(String[] args) {
-        HashMap<String,Object> map = new HashMap<>();
-//        map.put("ap",1);
-//        map.put("z2",2);
-//        map.put("h",3);
-//
-//        Map<String,Object> sortMap = sortMapByKey(map);
-//        System.out.println(sortMap);
+        HashMap<String,String> map = new HashMap<>();
+        map.put("appId","1");
+        map.put("name","2");
+        map.put("urlParam","3");
 
-        map.put("appId",1);
-        map.put("name",2);
-        String sign = generatorSign(map);
-//        a3337ee5d708e41ac38bd0d88561b95f
-        System.out.println(sign);
+        Map<String, String> stringObjectMap = sortMapByKey(map);
+        System.out.println(stringObjectMap);
+
+
+
+        String s = generatorSign(map);
+        // 74f0c8c14fd2869121c910601e9ea859
+        System.out.println(s);
     }
-
 
 }
